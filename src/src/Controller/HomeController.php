@@ -17,6 +17,9 @@ class HomeController extends AbstractController
     {
         $posts = $postRepository->findAll();
 
+        var_export($posts);
+        die;
+
         return [
             'posts' => $posts
         ];

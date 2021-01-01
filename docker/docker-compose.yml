@@ -1,6 +1,20 @@
 version: '3'
 
 services:
+  database-test:
+    build:
+      context: ./database-test
+    environment:
+      - MYSQL_DATABASE=${DATABASE_NAME_TEST}
+      - MYSQL_USER=${DATABASE_USER_TEST}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD_TEST}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD_TEST}
+    ports:
+      - "3206:3306"
+    volumes:
+      - ./database-test/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database-test/data:/var/lib/mysql
+
   database:
     build:
       context: ./database
