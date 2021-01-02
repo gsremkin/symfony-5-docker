@@ -1,7 +1,7 @@
 <?php
 
 // tests/Util/CalculatorTest.php
-namespace App\tests;
+namespace App\Tests;
 
 use App\Controller\HomeController;
 use App\Repository\PostRepository;
